@@ -32,9 +32,9 @@ resource "aws_subnet" "my_subnet" {
   }
 }
 
-resource "aws_network_interface" "foo" {
+resource "aws_network_interface" "blog" {
   subnet_id   = aws_subnet.my_subnet.id
-  private_ips = ["10.0.0.50"]
+  private_ips = ["10.0.0.51"]
 
   tags = {
     Name = "primary_network_interface"
@@ -46,7 +46,7 @@ resource "aws_instance" "blog" {
   instance_type = var.instance_type
   
   network_interface {
-    network_interface_id = aws_network_interface.foo.id
+    network_interface_id = aws_network_interface.blog.id
     device_index         = 0
   }
   tags = {
