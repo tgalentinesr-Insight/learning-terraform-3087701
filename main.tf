@@ -21,7 +21,7 @@ resource "aws_instance" "web" {
   network_interface {
     network_interface_id = "vpc-0f9c0a50b4874ac2b"
     device_index         = 0
-
+  }
   tags = {
     Name = "HelloWorld"
   }
